@@ -19,4 +19,7 @@ canvas.pack()
 img = tk.PhotoImage(file="planta.gif")
 canvas.create_image(0, 0, anchor=tk.NW, image=img)
 
+canvas.create_rectangle(68, 85, 180, 150, width=5, fill='red')
+canvas.create_rectangle(290, 85, 400, 152, width=5, fill='cyan')
+
 tk.mainloop()
