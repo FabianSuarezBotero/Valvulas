@@ -90,4 +90,6 @@ if inicio == True:
         # Tanque 3 con nivel 2
         canvas.create_rectangle(300, 383, 486, 420, width=5, fill='cyan')
 
+        #hola mundo
+
 tk.mainloop()
