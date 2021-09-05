@@ -41,8 +41,9 @@ canvas.create_polygon((250, 345, 222, 312, 200, 345),
                       width=4, fill="grey")  # Caldera apagada
 
 # Inicio del proceso
-
-if inicio == true:
+inicio = False
+temp = 100
+if inicio == True:
     # Valvula 1 cerrada borrada
     canvas.create_line(160, 179, 160, 156, width=5, fill='white')
     canvas.create_line(175, 179, 147, 156, width=5,
@@ -74,7 +75,8 @@ if inicio == true:
         canvas.create_rectangle(290, 85, 400, 152, width=5, fill='white')
         canvas.create_rectangle(
             157, 220, 320, 255, width=5, fill='cyan')  # Caldera nivel 2
-        # NO SE COMO PONER QUE LLEGUE A LOS 80 GRADOS
+        # SUBIRLO A LOS 80 GRADOS
+
         # Valvula 3 cerrada borrada
         canvas.create_line(309, 312, 309, 334, width=5, fill='white')
         canvas.create_line(294, 312, 322, 334, width=5,
