@@ -5,7 +5,7 @@ class CanvasTanque(tk.Canvas):
     def __init__(self, frame=None,type="a" , color="blue"):
         self.color=color
         self.type=type
-        self.estado = True
+        self.estado = False
         super().__init__(frame, width = 200, height = 180, bg = 'grey', highlightthickness=0)
         self.crear()
         
@@ -17,9 +17,9 @@ class CanvasTanque(tk.Canvas):
         self.create_rectangle(140,20,10,150, fill= "#CAC6BE") #tanque vacio 
         self.create_oval(10,130,140,160, fill= "#CAC6BE") #tapa inferior tanque vacio
         
-        self.create_rectangle(140,40,10,150, fill= self.color) #tanque liquido 
-        self.create_oval(10,130,140,160, fill= self.color) #tapa inferior tanque liquido
-        self.create_oval(10,30,140,60, fill= self.color) #tapa superior tanque liquido
+        #self.create_rectangle(140,40,10,150, fill= self.color) #tanque liquido 
+        #self.create_oval(10,130,140,160, fill= self.color) #tapa inferior tanque liquido
+        #self.create_oval(10,30,140,60, fill= self.color) #tapa superior tanque liquido
         
         self.create_oval(10,10,140,40, fill= "#CAC6BE") #tapa superior tanque vacio
         self.create_polygon(140,10,200,10,180,30,180,50,160,50,160,30, fill="red") #Tolva/valvula
@@ -61,7 +61,7 @@ class CanvasTanque(tk.Canvas):
                 self.create_polygon(140,10,200,10,180,30,180,50,160,50,160,30, fill="red")    
             
             self.create_oval(10,130,140,160, fill= self.color) #tapa inferior tanque liquido
-            self.estado=1
+            self.estado=True
             
     def vaciado(self):
         if(self.estado==True):
@@ -89,7 +89,7 @@ class CanvasTanque(tk.Canvas):
             elif(self.type=="b"):
                 self.create_polygon(140,70,200,70,180,90,180,110,160,110,160,90, fill="red")
             
-            self.estado=0
+            self.estado=False
 
     
         
