@@ -1,24 +1,20 @@
 from tkinter import *
 import time
 from random import *
-import tkinter as tk
 
 
+class Caldera():
 
-class Fogon(tk.LabelFrame):
-
-    def __init__(self, pantalla=None):
-        
-        super().__init__(pantalla)
+    def __init__(self, pantalla):
         self.estado = 0
         self.grados = 25
 
-        
-        self.config(width=600, height=200,
+        self.frame = Frame(pantalla)
+        self.frame.config(width=800, height=200,
                           bg="blue", highlightthickness=0)
-        self.pack(padx=10, pady=10)
+        self.frame.pack(padx=10, pady=10)
 
-        self.caldera = Canvas(self, width=400, height=200, bg='grey')
+        self.caldera = Canvas(self.frame, width=800, height=200, bg='grey')
         self.caldera.place(x=100, y=100)
 
         self.caldera.create_rectangle(140, 30, 320, 165, fill="#CAC6BE")
@@ -30,15 +26,15 @@ class Fogon(tk.LabelFrame):
         self.caldera.create_polygon(100, 85, 70, 130, 130, 130, fill='white')
         self.caldera.create_polygon(100, 30, 70, 75, 130, 75, fill='white')
 
-        nombre1 = Label(self, text="Nivel 2", bg="black",
+        nombre1 = Label(self.frame, text="Nivel 2", bg="black",
                         fg="white", font="Helvetica 12 bold")
         nombre1.pack()
         nombre1.place(x=335, y=42)
 
-        nombre2 = Label(self, text="Nivel 1", bg="black",
+        nombre2 = Label(self.frame, text="Nivel 1", bg="black",
                         fg="white", font="Helvetica 12 bold")
         nombre2.pack()
-        nombre2.place(x=335, y=97)
+        nombre2.place(x=335, y=95)
         self.crear()
 
     def llenado1(self):
@@ -65,10 +61,10 @@ class Fogon(tk.LabelFrame):
         return self.estado
 
     def mostrar_temp(self):
-        return self.grados
+        return self.temperatura
 
     def llenado2(self):
-        num = 149
+        num = 110
         for i in range(55, num):
             self.caldera.create_rectangle(140, 30, 320, 165, fill="#CAC6BE")
             self.caldera.create_oval(140, 150, 320, 170, fill="pink")
@@ -186,39 +182,39 @@ class Fogon(tk.LabelFrame):
     def crear(self):
         self.caldera.pack()
 
-        boton = Button(self, bg="magenta", text="LLENAR1",
+        boton = Button(self.frame, bg="magenta", text="LLENAR1",
                        command=self.llenado1, width=15)
         boton.pack()
         boton. place(x=380, y=120)
 
-        boton3 = Button(self, bg="magenta", text="LLENAR2",
+        boton3 = Button(self.frame, bg="magenta", text="LLENAR2",
                         command=self.llenado2, width=15)
         boton3.pack()
         boton3. place(x=380, y=80)
 
-        boton2 = Button(self, bg="aqua", text="VACIAR TODO",
+        boton2 = Button(self.frame, bg="aqua", text="VACIAR TODO",
                         command=self.vaciado2)
         boton2.pack()
         boton2. place(x=380, y=10)
 
-        boton1 = Button(self, bg="aqua", text="VACIAR 1",
+        boton1 = Button(self.frame, bg="aqua", text="VACIAR 1",
                         command=self.vaciado1)
         boton1.pack()
         boton1. place(x=380, y=40)
 
-        boton4 = Button(self, bg="aqua", text="Subir temp",
+        boton4 = Button(self.frame, bg="aqua", text="Subir temp",
                         command=self.subir_temperatura)
         boton4.pack()
         boton4. place(x=20, y=120)
 
-        boton5 = Button(self, bg="aqua", text="Bajar temp",
+        boton5 = Button(self.frame, bg="aqua", text="Bajar temp",
                         command=self.bajar_temperatura)
         boton5.pack()
         boton5. place(x=20, y=170)
 
 
-#raiz = Tk()
-#raiz.geometry("500x300")
-#raiz.config(bg="black")
-#Caldera = Fogon(raiz)
-#raiz.mainloop()
+raiz = Tk()
+raiz.geometry("500x300")
+raiz.config(bg="black")
+Caldera = Caldera(raiz)
+raiz.mainloop()
