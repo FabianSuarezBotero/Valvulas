@@ -29,12 +29,12 @@ class Caldera():
         nombre1 = Label(self.frame, text="Nivel 2", bg="black",
                         fg="white", font="Helvetica 12 bold")
         nombre1.pack()
-        nombre1.place(x=335, y=50)
+        nombre1.place(x=335, y=42)
 
         nombre2 = Label(self.frame, text="Nivel 1", bg="black",
                         fg="white", font="Helvetica 12 bold")
         nombre2.pack()
-        nombre2.place(x=335, y=110)
+        nombre2.place(x=335, y=97)
         self.crear()
 
     def llenado1(self):
@@ -64,7 +64,7 @@ class Caldera():
         return self.temperatura
 
     def llenado2(self):
-        num = 119
+        num = 149
         for i in range(55, num):
             self.caldera.create_rectangle(140, 30, 320, 165, fill="#CAC6BE")
             self.caldera.create_oval(140, 150, 320, 170, fill="pink")
