@@ -64,24 +64,26 @@ class Caldera():
         return self.temperatura
 
     def llenado2(self):
-        num = 110
-        for i in range(55, num):
-            self.caldera.create_rectangle(140, 30, 320, 165, fill="#CAC6BE")
-            self.caldera.create_oval(140, 150, 320, 170, fill="pink")
-            self.caldera.create_rectangle(140, num, 320, 165, fill="pink")
-            self.caldera.create_oval(140, 155, 320, 175, fill="pink")
-            # tapa superior tanque liquido
-            self.caldera.create_oval(140, num-15, 320, num+15, fill="pink")
+        while self.estado == 1:
+            num = 110
+            for i in range(55, num):
+                self.caldera.create_rectangle(
+                    140, 30, 320, 165, fill="#CAC6BE")
+                self.caldera.create_oval(140, 150, 320, 170, fill="pink")
+                self.caldera.create_rectangle(140, num, 320, 165, fill="pink")
+                self.caldera.create_oval(140, 155, 320, 175, fill="pink")
+                # tapa superior tanque liquido
+                self.caldera.create_oval(140, num-15, 320, num+15, fill="pink")
 
-            # tapa superior tanque vacio
-            self.caldera.create_oval(140, 15, 320, 45, fill="#CAC6BE")
-            self.caldera.update()
+                # tapa superior tanque vacio
+                self.caldera.create_oval(140, 15, 320, 45, fill="#CAC6BE")
+                self.caldera.update()
 
-            time. sleep(0.01)
-            num = num - 1
-            N = int((i-64)*250)
+                time. sleep(0.01)
+                num = num - 1
+                N = int((i-64)*250)
 
-            self.estado = 2
+                self.estado = 2
 
     def vaciado2(self):
         while self.estado == 2:
